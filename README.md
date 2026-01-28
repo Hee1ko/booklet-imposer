@@ -54,3 +54,8 @@ python3 booklet_imposer.py document.pdf booklet.pdf
 3. Fold the printed sheets in half
 4. Pages will be in correct reading order
 
+
+
+## Author
+
+Created by [Hee1ko](https://github.com/Hee1ko)
