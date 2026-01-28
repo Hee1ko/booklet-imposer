@@ -50,7 +50,7 @@ python3 booklet_imposer.py document.pdf booklet.pdf
 ## Printing Instructions
 
 1. Print the output PDF double-sided (duplex)
-2. Use "flip on short edge" setting
+2. No special flip settings needed - the script handles page rotation automatically
 3. Fold the printed sheets in half
 4. Pages will be in correct reading order
 
