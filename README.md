@@ -57,6 +57,15 @@ python3 booklet_imposer.py document.pdf booklet.pdf
 4. Pages will be in correct reading order
 
 
+## Technical Details
+
+- Front pages (even indices): Normal orientation, left page at x=0, right page at x=width
+- Back pages (odd indices): Rotated 180°, positions swapped to compensate for rotation
+- Each output page is double the width of the original page size
+
+## Contributing
+
+Contributions and feedback are welcome! Feel free to open an issue or submit a pull request.
 
 ## Author
 
