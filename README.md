@@ -33,6 +33,8 @@ python3 booklet_imposer.py input.pdf output.pdf
 python3 booklet_imposer.py document.pdf booklet.pdf
 ```
 
+**Tip:** Run `deactivate` when you're done to exit the virtual environment.
+
 ## How It Works
 
 1. **Page Calculation**: Pads the document to a multiple of 4 pages (required for booklet folding)
