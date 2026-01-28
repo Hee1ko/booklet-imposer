@@ -12,6 +12,11 @@ A Python script that converts a regular PDF into an imposed booklet layout for d
 ```bash
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Or install directly:
+```bash
 pip install pypdf
 ```
 
@@ -40,7 +45,7 @@ python3 booklet_imposer.py document.pdf booklet.pdf
 
 3. **Imposition**: Creates double-wide pages with two original pages side-by-side
 
-4. **Back Page Rotation**: Rotates back pages (odd indices) 180° and swaps left/right positions to ensure correct orientation when printing duplex
+4. **Back Page Rotation**: Rotates back pages (odd indices) 180° and swaps left/right positions to ensure correct orientation when printing duplex so that it doesn't require printer setting adjustments
 
 ## Printing Instructions
 
@@ -49,8 +54,3 @@ python3 booklet_imposer.py document.pdf booklet.pdf
 3. Fold the printed sheets in half
 4. Pages will be in correct reading order
 
-## Technical Details
-
-- Front pages (even indices): Normal orientation, left page at x=0, right page at x=width
-- Back pages (odd indices): Rotated 180°, positions swapped to compensate for rotation
-- Each output page is double the width of the original page size
