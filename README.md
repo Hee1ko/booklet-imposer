@@ -1,38 +1,33 @@
 # Booklet Imposer
 
-A tool that converts a regular PDF into an imposed booklet layout for double-sided printing.
+Convert any PDF into an imposed booklet layout for double-sided printing.
 
-**Try it online:** [https://ansapple.github.io/booklet-imposer/](https://ansapple.github.io/booklet-imposer/)
+## Option 1: Use Online (Recommended)
 
-## Requirements
+**[https://ansapple.github.io/booklet-imposer/](https://ansapple.github.io/booklet-imposer/)**
 
-- Python 3
-- pypdf library
-- flask (for web interface)
+1. Open the link above
+2. Drag and drop your PDF (or click to browse)
+3. Click "Convert to Booklet"
+4. Download starts automatically
 
-## Installation
+All processing happens in your browser — your files never leave your device.
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-## Usage
+## Option 2: Run Locally
 
 ### Web Interface
 
-1. Start the server:
 ```bash
+# Setup (first time only)
+python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
+
+# Run server
 python app.py
 ```
 
-2. Open http://127.0.0.1:5000 in your browser
-
-3. Drag and drop a PDF or click to browse
-
-4. Click "Convert to Booklet" - the converted PDF downloads automatically
+Open http://127.0.0.1:5000 in your browser.
 
 ### Command Line
 
@@ -41,26 +36,19 @@ source venv/bin/activate
 python3 booklet_imposer.py input.pdf output.pdf
 ```
 
-Example:
-```bash
-python3 booklet_imposer.py document.pdf booklet.pdf
-```
+## Printing Instructions
 
-**Tip:** Run `deactivate` when done to exit the virtual environment.
+1. Print double-sided (duplex)
+2. Fold the printed sheets in half
+3. Staple along the fold
+4. Pages will be in correct reading order
 
 ## How It Works
 
-1. Pads the document to a multiple of 4 pages (required for booklet folding)
-2. Arranges pages in booklet order
-3. Creates double-wide pages with two original pages side-by-side
-4. Rotates back pages 180° for correct duplex orientation
-
-## Printing Instructions
-
-1. Print the output PDF double-sided (duplex)
-2. No special flip settings needed - the script handles page rotation automatically
-3. Fold the printed sheets in half
-4. Pages will be in correct reading order
+- Pads document to a multiple of 4 pages
+- Arranges pages in booklet imposition order
+- Creates double-wide spreads
+- Rotates back pages 180° for correct duplex orientation
 
 ## Author
 
