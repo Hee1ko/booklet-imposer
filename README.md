@@ -1,71 +1,54 @@
 # Booklet Imposer
 
-A Python script that converts a regular PDF into an imposed booklet layout for double-sided printing.
+Convert any PDF into an imposed booklet layout for double-sided printing.
 
-## Requirements
+## Option 1: Use Online (Recommended)
 
-- Python 3
-- pypdf library
+**[https://ansapple.github.io/booklet-imposer/](https://ansapple.github.io/booklet-imposer/)**
 
-### Installation
+1. Open the link above
+2. Drag and drop your PDF (or click to browse)
+3. Click "Convert to Booklet"
+4. Download starts automatically
+
+All processing happens in your browser — your files never leave your device.
+
+## Option 2: Run Locally
+
+### Web Interface
 
 ```bash
+# Setup (first time only)
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
+# Run server
+python app.py
 ```
 
-Or install directly:
-```bash
-pip install pypdf
-```
+Open http://127.0.0.1:5000 in your browser.
 
-## Usage
+### Command Line
 
 ```bash
 source venv/bin/activate
 python3 booklet_imposer.py input.pdf output.pdf
 ```
 
-### Example
+## Printing Instructions
 
-```bash
-python3 booklet_imposer.py document.pdf booklet.pdf
-```
-
-**Tip:** Run `deactivate` when you're done to exit the virtual environment.
+1. Print double-sided (duplex)
+2. Fold the printed sheets in half
+3. Staple along the fold
+4. Pages will be in correct reading order
 
 ## How It Works
 
-1. **Page Calculation**: Pads the document to a multiple of 4 pages (required for booklet folding)
-
-2. **Page Ordering**: Arranges pages in booklet order where:
-   - Sheet 1 front: pages [last, 1]
-   - Sheet 1 back: pages [2, second-to-last]
-   - Sheet 2 front: pages [second-to-last-2, 3]
-   - And so on...
-
-3. **Imposition**: Creates double-wide pages with two original pages side-by-side
-
-4. **Back Page Rotation**: Rotates back pages (odd indices) 180° and swaps left/right positions to ensure correct orientation when printing duplex so that it doesn't require printer setting adjustments
-
-## Printing Instructions
-
-1. Print the output PDF double-sided (duplex)
-2. No special flip settings needed - the script handles page rotation automatically
-3. Fold the printed sheets in half
-4. Pages will be in correct reading order
-
-
-## Technical Details
-
-- Front pages (even indices): Normal orientation, left page at x=0, right page at x=width
-- Back pages (odd indices): Rotated 180°, positions swapped to compensate for rotation
-- Each output page is double the width of the original page size
-
-## Contributing
-
-Contributions and feedback are welcome! Feel free to open an issue or submit a pull request.
+- Pads document to a multiple of 4 pages
+- Arranges pages in booklet imposition order
+- Creates double-wide spreads
+- Rotates back pages 180° for correct duplex orientation
 
 ## Author
 
